@@ -9,7 +9,7 @@ def cursor_to_list(c):
 
 #Establishes a connection to the restaurants collection
 def connect():
-    connection = pymongo.MongoClient("homer.stuy.edu")
+    connection = MongoClient("homer.stuy.edu")
     db = connection.test
     return db.restaurants
 
