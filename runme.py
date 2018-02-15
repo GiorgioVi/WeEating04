@@ -27,6 +27,7 @@ def get_by_zipcode_and_grade(zip, grade):
 
 #Returns a list of dictionaries of all restaurants in this zipcode with a score below this one
 def get_by_zipcode_and_score(zip, score):
+    score = int(score)
     return cursor_to_list(connect().find({"address.zipcode": zip, "grades.score": {"$lt": score}}))
 
 #Returns a list of dictionaries of all restaurants in this borough with a certain cuisine
@@ -52,8 +53,8 @@ print ""
 print "The one with an A is"
 print get_by_zipcode_and_grade("10282", "A")[:1]
 print ""
-print "The one with a score less than 100 is"
-print get_by_zipcode_and_score("10282", "100")[:1]
+print "The one with a score less than 10 is"
+print get_by_zipcode_and_score("10282", "10")[:1]
 print ""
 print "Uhg, not this slop..."
 print interesting("Brooklyn", "Russian")[:1]
