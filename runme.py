@@ -45,11 +45,15 @@ grades: [{date, grade, score}]
 ###TESTS
 print "When in Brooklyn, go to"
 print get_by_borough("Brooklyn")[0]
+print ""
 print "When in 10282 (tribeca), go to"
-print get_by_zipcode("10282")
+print get_by_zipcode("10282")[0]
+print ""
 print "The one with an A is"
-print get_by_zipcode_and_grade("10282", "A")
+print get_by_zipcode_and_grade("10282", "A")[0]
+print ""
 print "The one with a score less than 5 is"
-print get_by_zipcode_and_score("10282", "5")
+print get_by_zipcode_and_score("10282", "5")[0]
+print ""
 print "Uhg, not this slop..."
-print interesting("Brooklyn", "Russian")
+print interesting("Brooklyn", "Russian")[0]
